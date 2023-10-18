@@ -1,12 +1,12 @@
 let firstRun = true
-
+let baseLayer;
 let surfer1 = [];
 let surfer2 = [];
 let wave = [];
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 
 function draw_one_frame(words, vocal, drum, bass, other, counter){
-if (firstRun){
+ if (firstRun){
 
   surfer1.push(loadImage('surfer1_0.png'));
   surfer1.push(loadImage('surfer1_1.png'));
@@ -18,24 +18,14 @@ if (firstRun){
   surfer2.push(loadImage('surfer2_2.png'));
   surfer2.push(loadImage('surfer2_3.png'));
 
-  wave.push(loadImage('wave_0.png'));
-  wave.push(loadImage('wave_1.png'));
-  wave.push(loadImage('wave_2.png'));
-  wave.push(loadImage('wave_3.png'));
-
-
-  //baseLayer = loadImage('wave.png');
+    baseLayer = loadImage('wave_0.png');
 
   firstRun = false
-}
+ }
+
 
     background (140, 210, 245);
-    //image(baseLayer, 0, 0);
-
-    var  VocalFrame = int(map(vocal, 0,100, 0,3));
-    push();
-    scale();
-    image(wave[VocalFrame], width/200, height/200);
+    image(baseLayer, 0, 0);
 
     var BassFrame = int(map(bass, 0,100, 0,3));
     push();
@@ -49,20 +39,29 @@ if (firstRun){
 
 
     var sunSize = map(drum, 0,100, 40,150);
-    
-  noStroke();
-  fill(255, 213, 0)
-  ellipse(width/10, height/8, sunSize+100);
-  fill(255, 213, 0, 50)
-  ellipse(width/10, height/8, sunSize+160);
-  fill(255, 213, 0, 25)
-  ellipse(width/10, height/8, sunSize+240);
-  fill(255, 213, 0, 15)
-  ellipse(width/10, height/8, sunSize+300);
+  
+
+  //sun
+    noStroke();
+    fill(255, 213, 0)
+    ellipse(width/10, height/8, sunSize+100);
+    fill(255, 213, 0, 50)
+    ellipse(width/10, height/8, sunSize+160);
+    fill(255, 213, 0, 25)
+    ellipse(width/10, height/8, sunSize+240);
+    fill(255, 213, 0, 15)
+    ellipse(width/10, height/8, sunSize+300);
 
 
+    fill(2, 39, 46)
+    textFont('Helvetica'); // please use CSS safe fonts
+    rectMode(CENTER)
+    textSize(24);
 
-
+    //display "words"
+    textAlign(CENTER);
+    textSize(vocal);
+    text(words, width/2, height/3);
 
 
 

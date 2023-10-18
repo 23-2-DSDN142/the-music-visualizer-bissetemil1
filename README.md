@@ -7,57 +7,9 @@ A P5JS framework for running a simple music visualizer, intended as a creative c
 Song details: 
 Title = Surfin' USA
 Artist = The Beach Boys
+ 
+ words
 
-
-
-
-
-
-var VocalFrame = int(map(vocal, 0,100, 0,5));
-
-image(cloud[VocalFrame], width/1, height/1);
-
-
-
-
-
-  if(secondRun){
-
-    cloud.push(loadImage('cloud_0'));
-    cloud.push(loadImage('cloud_1'));
-    cloud.push(loadImage('cloud_2'));
-    cloud.push(loadImage('cloud_3'));
-    cloud.push(loadImage('cloud_4'));
-    cloud.push(loadImage('cloud_5'));
-
-    secondRun = false
-  }
-
-    var VocalFrame = int(map(vocal, 0,100, 0,100));
-  push();
-  scale(10);
-  image(cloud[VocalFrame], width/1, height/1);
-  pop();
-
-
-let baseLayer;
-
-  if(firstRun){
-  baseLayer = loadImage('wave.png');
-
-  firstRun = false
-  }
-
-
-
-  background(20)
-  
-  image( baseLayer, 0,0)
-
-
-push();
-scale(0.5);
-pop();
 
  
 
@@ -97,7 +49,7 @@ pop();
    text("other", bar_pos_x, height / 2 + 4 * bar_spacing + 8);
    fill(255, 255, 0);
  
-   // display "words"
+   display "words"
    textAlign(CENTER);
    textSize(vocal);
    text(words, width/2, height/3);
