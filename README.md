@@ -49,7 +49,7 @@ Artist = The Beach Boys
    text("other", bar_pos_x, height / 2 + 4 * bar_spacing + 8);
    fill(255, 255, 0);
  
-   display "words"
+   //display "words"
    textAlign(CENTER);
    textSize(vocal);
    text(words, width/2, height/3);

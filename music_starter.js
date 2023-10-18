@@ -53,15 +53,15 @@ function draw_one_frame(words, vocal, drum, bass, other, counter){
     ellipse(width/10, height/8, sunSize+300);
 
 
-    fill(2, 39, 46)
-    textFont('Helvetica'); // please use CSS safe fonts
+    fill(6, 115, 122)
+    textFont('Gill Sans'); // please use CSS safe fonts
     rectMode(CENTER)
-    textSize(24);
+    textSize(32);
 
     //display "words"
     textAlign(CENTER);
     textSize(vocal);
-    text(words, width/2, height/3);
+    text(words, width/10, height/3);
 
 
 
