@@ -8,6 +8,19 @@ Song details:
 Title = Surfin' USA
 Artist = The Beach Boys
 
+
+
+
+
+
+var VocalFrame = int(map(vocal, 0,100, 0,5));
+
+image(cloud[VocalFrame], width/1, height/1);
+
+
+
+
+
   if(secondRun){
 
     cloud.push(loadImage('cloud_0'));
@@ -42,7 +55,9 @@ let baseLayer;
   image( baseLayer, 0,0)
 
 
-
+push();
+scale(0.5);
+pop();
 
  
 
