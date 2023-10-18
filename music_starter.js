@@ -2,9 +2,9 @@ let firstRun = true
 let baseLayer;
 let surfer1 = [];
 let surfer2 = [];
-let wave = [];
-// vocal, drum, bass, and other are volumes ranging from 0 to 100
 
+
+// vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter){
  if (firstRun){
 
@@ -24,24 +24,25 @@ function draw_one_frame(words, vocal, drum, bass, other, counter){
  }
 
 
-    background (140, 210, 245);
     image(baseLayer, 0, 0);
 
+    //surfer one (red shirt)
     var BassFrame = int(map(bass, 0,100, 0,3));
     push();
     scale();
     image(surfer1[BassFrame], width/10, height/10);
     
+
+    //surfer two (green shirt)
     var  BassFrame = int(map(bass, 0,100, 0,3));
     push();
     scale();
     image(surfer2[BassFrame], width/10, height/10);
 
 
+    //sun
     var sunSize = map(drum, 0,100, 40,150);
   
-
-  //sun
     noStroke();
     fill(255, 213, 0)
     ellipse(width/10, height/8, sunSize+100);
@@ -53,12 +54,13 @@ function draw_one_frame(words, vocal, drum, bass, other, counter){
     ellipse(width/10, height/8, sunSize+300);
 
 
+
+    //display "words"
     fill(6, 115, 122)
     textFont('Gill Sans'); // please use CSS safe fonts
     rectMode(CENTER)
     textSize(32);
 
-    //display "words"
     textAlign(CENTER);
     textSize(vocal);
     text(words, width/10, height/3);
