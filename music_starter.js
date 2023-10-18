@@ -8,6 +8,8 @@ let surfer2 = [];
 function draw_one_frame(words, vocal, drum, bass, other, counter){
  if (firstRun){
 
+  baseLayer = loadImage('wave_0.png');
+
   surfer1.push(loadImage('surfer1_0.png'));
   surfer1.push(loadImage('surfer1_1.png'));
   surfer1.push(loadImage('surfer1_2.png'));
@@ -17,8 +19,6 @@ function draw_one_frame(words, vocal, drum, bass, other, counter){
   surfer2.push(loadImage('surfer2_1.png'));
   surfer2.push(loadImage('surfer2_2.png'));
   surfer2.push(loadImage('surfer2_3.png'));
-
-    baseLayer = loadImage('wave_0.png');
 
   firstRun = false
  }
@@ -54,7 +54,6 @@ function draw_one_frame(words, vocal, drum, bass, other, counter){
     ellipse(width/10, height/8, sunSize+300);
 
 
-
     //display "words"
     fill(6, 115, 122)
     textFont('Gill Sans'); // please use CSS safe fonts
@@ -64,7 +63,6 @@ function draw_one_frame(words, vocal, drum, bass, other, counter){
     textAlign(CENTER);
     textSize(vocal);
     text(words, width/10, height/3);
-
 
 
     }
