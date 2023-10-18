@@ -8,7 +8,43 @@ Song details:
 Title = Surfin' USA
 Artist = The Beach Boys
 
+  if(secondRun){
 
+    cloud.push(loadImage('cloud_0'));
+    cloud.push(loadImage('cloud_1'));
+    cloud.push(loadImage('cloud_2'));
+    cloud.push(loadImage('cloud_3'));
+    cloud.push(loadImage('cloud_4'));
+    cloud.push(loadImage('cloud_5'));
+
+    secondRun = false
+  }
+
+    var VocalFrame = int(map(vocal, 0,100, 0,100));
+  push();
+  scale(10);
+  image(cloud[VocalFrame], width/1, height/1);
+  pop();
+
+
+let baseLayer;
+
+  if(firstRun){
+  baseLayer = loadImage('wave.png');
+
+  firstRun = false
+  }
+
+
+
+  background(20)
+  
+  image( baseLayer, 0,0)
+
+
+
+
+ 
 
   background(140, 210, 245)
   
